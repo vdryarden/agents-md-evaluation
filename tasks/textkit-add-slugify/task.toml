@@ -1,0 +1,18 @@
+schema_version = "1.4"
+artifacts = []
+
+[metadata]
+category = "convention"
+difficulty = "easy"
+description = "Add a public slugify() helper to a small library that has house conventions."
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"
