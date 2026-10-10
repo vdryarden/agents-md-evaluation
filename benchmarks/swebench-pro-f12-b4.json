@@ -1,0 +1,229 @@
+{
+  "description": "SWE-bench Pro: 12 feature-only + 4 bug-only tasks",
+  "selection": {
+    "source": "ScaleAI/SWE-bench_Pro (v1, 731 tasks), issue_specificity labels",
+    "command": "python -m agents_md_bench.swebench_pro --out benchmarks/swebench-pro-f12-b4.json",
+    "seed": 0,
+    "max_image_gb": 1.5,
+    "skipped": [
+      {
+        "task": "instance_gravitational__teleport-59d39dee5a8a66e5b8a18a9085a199d369b1fba8-v626ec2a48416b10a88641359a169d99e935ff037",
+        "type": "feature",
+        "reason": "image 2.39 GB > 1.5 GB"
+      },
+      {
+        "task": "instance_protonmail__webclients-2dce79ea4451ad88d6bfe94da22e7f2f988efa60",
+        "type": "feature",
+        "reason": "image 4.68 GB > 1.5 GB"
+      },
+      {
+        "task": "instance_flipt-io__flipt-f36bd61fb1cee4669de1f00e59da462bfeae8765",
+        "type": "bug",
+        "reason": "image 1.53 GB > 1.5 GB"
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "name": "swebenchpro",
+      "version": "1.0",
+      "task_names": [
+        "instance_ansible__ansible-5e88cd9972f10b66dd97e1ee684c910c6a2dd25e-v906c969b551b346ef54a2c0b41e04f632b7b73c2",
+        "instance_element-hq__element-web-a692fe21811f88d92e8f7047fc615e4f1f986b0f-vnan",
+        "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+        "instance_ansible__ansible-949c503f2ef4b2c5d668af0492a5c0db1ab86140-v0f01c69f1e2528b935359cfe578530722bca2c59",
+        "instance_qutebrowser__qutebrowser-233cb1cc48635130e5602549856a6fa4ab4c087f-v35616345bb8052ea303186706cec663146f0f184",
+        "instance_qutebrowser__qutebrowser-0aa57e4f7243024fa4bba8853306691b5dbd77b3-v5149fcda2a9a6fe1d35dfed1bade1444a11ef271",
+        "instance_nodebb__nodebb-f083cd559d69c16481376868c8da65172729c0ca-vnan",
+        "instance_internetarchive__openlibrary-0d13e6b4bf80bced6c0946b969b9a1b6963f6bce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+        "instance_internetarchive__openlibrary-7cbfb812ef0e1f9716e2d6e85d538a96fcb79d13-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+        "instance_ansible__ansible-83fb24b923064d3576d473747ebbe62e4535c9e3-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+        "instance_navidrome__navidrome-23bebe4e06124becf1000e88472ae71a6ca7de4c",
+        "instance_ansible__ansible-e22e103cdf8edc56ff7d9b848a58f94f1471a263-v1055803c3a812189a1133297f7f5468579283f86",
+        "instance_future-architect__vuls-4b680b996061044e93ef5977a081661665d3360a",
+        "instance_ansible__ansible-b5e0293645570f3f404ad1dbbe5f006956ada0df-v0f01c69f1e2528b935359cfe578530722bca2c59",
+        "instance_tutao__tutanota-fb32e5f9d9fc152a00144d56dd0af01760a2d4dc-vc4e41fd0029957297843cb9dec4a25c7c756f029",
+        "instance_internetarchive__openlibrary-0a90f9f0256e4f933523e9842799e39f95ae29ce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task": "instance_ansible__ansible-5e88cd9972f10b66dd97e1ee684c910c6a2dd25e-v906c969b551b346ef54a2c0b41e04f632b7b73c2",
+      "type": "feature",
+      "repo": "ansible/ansible",
+      "language": "python",
+      "issue_specificity": [
+        "core_feat",
+        "api_feat",
+        "integration_feat",
+        "security_feat"
+      ],
+      "image_gb": 0.53
+    },
+    {
+      "task": "instance_element-hq__element-web-a692fe21811f88d92e8f7047fc615e4f1f986b0f-vnan",
+      "type": "feature",
+      "repo": "element-hq/element-web",
+      "language": "js",
+      "issue_specificity": [
+        "security_feat"
+      ],
+      "image_gb": 1.09
+    },
+    {
+      "task": "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "type": "feature",
+      "repo": "internetarchive/openlibrary",
+      "language": "python",
+      "issue_specificity": [
+        "core_feat"
+      ],
+      "image_gb": 0.78
+    },
+    {
+      "task": "instance_ansible__ansible-949c503f2ef4b2c5d668af0492a5c0db1ab86140-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "type": "feature",
+      "repo": "ansible/ansible",
+      "language": "python",
+      "issue_specificity": [
+        "customization_feat"
+      ],
+      "image_gb": 0.52
+    },
+    {
+      "task": "instance_qutebrowser__qutebrowser-233cb1cc48635130e5602549856a6fa4ab4c087f-v35616345bb8052ea303186706cec663146f0f184",
+      "type": "feature",
+      "repo": "qutebrowser/qutebrowser",
+      "language": "python",
+      "issue_specificity": [
+        "ui_ux_feat",
+        "customization_feat",
+        "integration_feat"
+      ],
+      "image_gb": 0.67
+    },
+    {
+      "task": "instance_qutebrowser__qutebrowser-0aa57e4f7243024fa4bba8853306691b5dbd77b3-v5149fcda2a9a6fe1d35dfed1bade1444a11ef271",
+      "type": "feature",
+      "repo": "qutebrowser/qutebrowser",
+      "language": "python",
+      "issue_specificity": [
+        "ui_ux_feat"
+      ],
+      "image_gb": 0.54
+    },
+    {
+      "task": "instance_nodebb__nodebb-f083cd559d69c16481376868c8da65172729c0ca-vnan",
+      "type": "feature",
+      "repo": "NodeBB/NodeBB",
+      "language": "js",
+      "issue_specificity": [
+        "core_feat",
+        "integration_feat",
+        "performance_feat"
+      ],
+      "image_gb": 0.91
+    },
+    {
+      "task": "instance_internetarchive__openlibrary-0d13e6b4bf80bced6c0946b969b9a1b6963f6bce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "type": "feature",
+      "repo": "internetarchive/openlibrary",
+      "language": "python",
+      "issue_specificity": [
+        "core_feat"
+      ],
+      "image_gb": 1.18
+    },
+    {
+      "task": "instance_internetarchive__openlibrary-7cbfb812ef0e1f9716e2d6e85d538a96fcb79d13-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "type": "feature",
+      "repo": "internetarchive/openlibrary",
+      "language": "python",
+      "issue_specificity": [
+        "core_feat",
+        "ui_ux_feat",
+        "customization_feat"
+      ],
+      "image_gb": 0.69
+    },
+    {
+      "task": "instance_ansible__ansible-83fb24b923064d3576d473747ebbe62e4535c9e3-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+      "type": "feature",
+      "repo": "ansible/ansible",
+      "language": "python",
+      "issue_specificity": [
+        "core_feat"
+      ],
+      "image_gb": 0.54
+    },
+    {
+      "task": "instance_navidrome__navidrome-23bebe4e06124becf1000e88472ae71a6ca7de4c",
+      "type": "feature",
+      "repo": "navidrome/navidrome",
+      "language": "go",
+      "issue_specificity": [
+        "api_feat"
+      ],
+      "image_gb": 1.0
+    },
+    {
+      "task": "instance_ansible__ansible-e22e103cdf8edc56ff7d9b848a58f94f1471a263-v1055803c3a812189a1133297f7f5468579283f86",
+      "type": "feature",
+      "repo": "ansible/ansible",
+      "language": "python",
+      "issue_specificity": [
+        "core_feat",
+        "customization_feat",
+        "integration_feat"
+      ],
+      "image_gb": 0.5
+    },
+    {
+      "task": "instance_future-architect__vuls-4b680b996061044e93ef5977a081661665d3360a",
+      "type": "bug",
+      "repo": "future-architect/vuls",
+      "language": "go",
+      "issue_specificity": [
+        "integration_bug"
+      ],
+      "image_gb": 1.42
+    },
+    {
+      "task": "instance_ansible__ansible-b5e0293645570f3f404ad1dbbe5f006956ada0df-v0f01c69f1e2528b935359cfe578530722bca2c59",
+      "type": "bug",
+      "repo": "ansible/ansible",
+      "language": "python",
+      "issue_specificity": [
+        "data_bug",
+        "edge_case_bug"
+      ],
+      "image_gb": 0.52
+    },
+    {
+      "task": "instance_tutao__tutanota-fb32e5f9d9fc152a00144d56dd0af01760a2d4dc-vc4e41fd0029957297843cb9dec4a25c7c756f029",
+      "type": "bug",
+      "repo": "tutao/tutanota",
+      "language": "ts",
+      "issue_specificity": [
+        "major_bug",
+        "compatibility_bug",
+        "ui_ux_bug"
+      ],
+      "image_gb": 1.24
+    },
+    {
+      "task": "instance_internetarchive__openlibrary-0a90f9f0256e4f933523e9842799e39f95ae29ce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "type": "bug",
+      "repo": "internetarchive/openlibrary",
+      "language": "python",
+      "issue_specificity": [
+        "major_bug",
+        "data_bug",
+        "integration_bug",
+        "edge_case_bug"
+      ],
+      "image_gb": 1.13
+    }
+  ]
+}

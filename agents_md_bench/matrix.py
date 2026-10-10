@@ -6,6 +6,7 @@
         --agent codex=openai/gpt-5.5 \
         -k 3 -n 4 --name pilot
 
+--tasks is a folder of local tasks or a manifest from benchmarks/ (registry tasks).
 Each *.md file in --variants becomes a variant named after its stem; a "none"
 variant (no instruction file at all) is added unless --no-baseline is passed.
 The job config is written to <jobs-dir>/<name>.yaml, then `harbor run -c` runs it.
@@ -61,13 +62,24 @@ def build_config(args: argparse.Namespace) -> dict:
         "n_concurrent_trials": args.concurrency,
         "environment": {"type": args.env},
         "agents": agents,
-        "datasets": [{"path": str(Path(args.tasks).resolve())}],
+        "datasets": load_datasets(args.tasks),
     }
+
+
+def load_datasets(tasks: str) -> list[dict]:
+    """A folder of local tasks, or a manifest JSON whose "datasets" are Harbor dataset configs."""
+    path = Path(tasks)
+    if path.is_file():
+        return json.loads(path.read_text())["datasets"]
+    return [{"path": str(path.resolve())}]
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--tasks", default="tasks", help="directory of Harbor tasks")
+    parser.add_argument(
+        "--tasks", default="tasks",
+        help="directory of Harbor tasks, or a benchmark manifest (e.g. benchmarks/swebench-pro-f12-b4.json)",
+    )
     parser.add_argument("--variants", default="variants", help="directory of instruction files (*.md)")
     parser.add_argument("--only", nargs="*", help="variant stems to include (default: all)")
     parser.add_argument("--no-baseline", action="store_true", help="skip the no-file baseline")
