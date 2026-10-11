@@ -1,0 +1,7 @@
+Where the third-party variants come from (kept out of the .md files so the agent never sees this note).
+
+ponytail.md  AGENTS.md from https://github.com/DietrichGebert/ponytail at 9cc65d0 (MIT License, (c) 2026 DietrichGebert)
+caveman.md   src/rules/caveman-activate.md from https://github.com/JuliusBrussee/caveman at 2e08b91 (Apache-2.0, (c) 2026 Julius Brussee);
+             its INSTALL.md says this is the rule it appends to AGENTS.md. The repo's own root AGENTS.md is a contributor note, not the ruleset.
+
+isolated-utils.md  written by Yarden for this benchmark (2026-10-10).
