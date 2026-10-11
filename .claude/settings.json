@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(harbor run:*)",
+      "Bash(docker run:*)"
+    ]
+  }
+}
