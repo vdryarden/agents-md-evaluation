@@ -57,7 +57,9 @@ python -m agents_md_bench.matrix --tasks benchmarks/swebench-pro-f12-b4.json \
 
 The manifest was made with `python -m agents_md_bench.swebench_pro --features 12 --bugs 4 --seed 0 --out benchmarks/swebench-pro-f12-b4.json`, which shuffles each type's task ids with the seed and takes them in order, skipping images over 1.5 GB compressed so they fit a small machine. The manifest lists every task with its repo, language, labels and image size, and the ones skipped and why. Rerun it with a different `--seed` or counts to draw a new slice, and `--exclude TASK=REASON` to drop a task that fails validation.
 
-Each image is 0.5 to 1.4 GB compressed and a few GB unpacked, so with Docker's default storage expect to need about 40 GB free for all 16 at once, or prune images between tasks. Trials are long (real repos, full test files), so budget accordingly before a paid run.
+All 16 were checked on 2026-10-11: each reference solution scores 1 and the do-nothing agent (with `placebo.md` injected) scores 0, recorded per task under `validated`. One earlier pick (a tutanota bug) was dropped because its grader downloads Node headers during the build and fails without direct internet access; the manifest's `command` shows the `--exclude` that replaced it.
+
+The images add up to about 13 GB compressed and pull from Docker Hub, whose anonymous limit (100 pulls an hour per IP) can stall a fresh machine; `docker login` raises it. Real repos with full test files make trials much longer and costlier than the toy task, so estimate cost before a paid run.
 
 ## Reading the results
 
